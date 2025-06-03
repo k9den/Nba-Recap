@@ -171,14 +171,14 @@ export default function GameRecapPage() {
             value={team} 
             onChange={(e) => setTeam(e.target.value)} 
             required
-            className="w-full"
+            className={`w-full ${darkMode ? "placeholder-white" : "placeholder-gray-500"}`}
           />
           <Input 
             type="date" 
             value={date} 
             onChange={(e) => setDate(e.target.value)} 
             required
-            className="w-full bg-gray"
+            className={`w-full bg-gray ${darkMode ? "placeholder-white" : "placeholder-gray-500"}`}
           />
           <Button type="submit" 
           disabled={loading} 
@@ -228,27 +228,29 @@ export default function GameRecapPage() {
         >
           <Card>
             <CardContent>
-              {recap.thumbnail && (
-                <div className="relative">
-                  <img
-                    src={recap.thumbnail}
-                    alt="Video Thumbnail"
-                    className="rounded-t-lg w-full aspect-video object-cover"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-white/70 backdrop-blur-md p-3 rounded-full">
-                      <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
+              <div className="flex flex-col h-full">
+                {recap.thumbnail && (
+                  <div className="relative">
+                    <img
+                      src={recap.thumbnail}
+                      alt="Video Thumbnail"
+                      className="rounded-t-lg w-full aspect-video object-cover"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-white/70 backdrop-blur-md p-3 rounded-full">
+                        <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
+                )}
+                <div className="p-4 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold mb-2">{recap.title}</h3>
+                  <p className="text-gray-300 text-sm flex-1">
+                    {recap.summary.length > 100 ? `${recap.summary.slice(0, 100)}...` : recap.summary}
+                  </p>
                 </div>
-              )}
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{recap.title}</h3>
-                <p className="text-gray-300 text-sm">
-                  {recap.summary.length > 100 ? `${recap.summary.slice(0, 100)}...` : recap.summary}
-                </p>
               </div>
             </CardContent>
           </Card>
