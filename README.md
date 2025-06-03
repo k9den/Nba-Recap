@@ -24,8 +24,6 @@ An AI-powered web app that generates personalized **NBA game recaps** using Goog
 <img width="1506" alt="Screenshot 2025-06-02 at 11 56 07 PM" src="https://github.com/user-attachments/assets/1cc12968-5152-4228-8285-e77157a83198" />
 
 
-![NBA Recap Screenshot](public/preview.png)
-
 
 ## 🧑‍💻 How It Works
 
