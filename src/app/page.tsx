@@ -247,7 +247,7 @@ export default function GameRecapPage() {
                 )}
                 <div className="p-4 flex-1 flex flex-col">
                   <h3 className="text-xl font-semibold mb-2">{recap.title}</h3>
-                  <p className="text-gray-300 text-sm flex-1">
+                  <p className="text-gray-300 text-sm flex-1 font-serif">
                     {recap.summary.length > 100 ? `${recap.summary.slice(0, 100)}...` : recap.summary}
                   </p>
                 </div>
